@@ -1,0 +1,21 @@
+.flat{
+	background-color: var(--bg1);
+	padding:var(--m-n) 0;
+	border-bottom: 3px solid rgb(0 0 0 / 21%); 
+}
+.flat .content{
+	display: grid;
+	grid-template-columns: repeat(6,1fr);
+	grid-gap: 7px;
+
+}
+.flat .content > div{
+	background-color: var(--c-text);
+    border-radius: 4px;
+    text-align: center;
+}
+.flat .content img{
+	width: 100%;
+	max-width: 100px;
+
+}

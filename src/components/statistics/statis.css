@@ -1,0 +1,34 @@
+.Statis{
+	padding: calc(var(--m-n) - 30px) 0;
+    background-color: var(--bg1);
+    border-bottom: 3px solid rgb(0 0 0 / 21%);
+}
+.Statis .content{
+	display: grid;
+	grid-template-columns: repeat(4,auto);
+	grid-gap: 10px;
+}
+@media(max-width:688px ){
+	.Statis .content{
+	
+	grid-template-columns: repeat(auto-fill,minmax(210px,1fr));
+	
+}
+}
+.Statis .content .stats{
+	background-color: var(--bg2);
+    text-align: center;
+    padding: 10px;
+    border-radius: 3px;
+
+}
+.Statis .content .stats .num{
+	font-weight: 500;
+    font-size: 30px;
+    margin-bottom: 10px;
+    color: var(--num-color);
+}
+.Statis .content .stats .name{
+	font-size: 18px;
+	margin-bottom: 10px;
+}

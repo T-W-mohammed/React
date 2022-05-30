@@ -1,0 +1,257 @@
+
+.landing{
+	background-color:var(--bg1);
+	min-height: 100vh;
+	border-bottom: 3px solid rgb(0 0 0 / 21%);
+}
+nav{
+	display: flex;
+    align-items: center;
+    padding: 25px 0;
+    border-bottom: 1px solid var(--o-text);
+    height: 80px;
+}
+nav .container{
+	display: flex;
+    justify-content: space-between;
+}
+
+@media(max-width: 768px){
+	nav .container{
+		width: 100%;
+		position: relative;
+	}
+}
+
+nav .left{
+	display: flex;
+	align-items: center;
+	margin-right: 15px;
+}
+nav .right{
+	display: flex;
+	flex:1;
+	justify-content: space-between;
+	align-items: center;
+
+}
+@media (max-width: 768px){
+	nav .right{
+		position: absolute;
+   		right: 0;
+    	top: 57px;
+    	width: 100%;
+    	display: flex;
+    	flex-direction: column;
+    	background-color: var(--bg2);
+    	height: auto;
+    	padding: 20px 0;
+    	border-bottom-left-radius: 16px;
+    	border-bottom-right-radius: 16px;
+    	transform: translateY(25%);
+    	opacity: 0;
+    	z-index: -10;
+    	transition:var(--m-transition) ease-in-out;
+	}
+	nav .right.active{
+		transform: translateY(0);
+    	opacity: 1;
+    	z-index: 10; 
+	}
+}
+nav .logo{
+	font-size: 25px;
+	cursor: pointer;
+}
+nav .logo span{
+	color:var(--btn1-color);
+	font-size: 25px;
+}
+nav .logo span:first-child{
+	background-color: var(--num-color);
+    color: var(--c-text);
+    border-radius: 5px;
+    padding: 4px;
+    font-weight: bold;
+}
+nav ul {
+	display: flex;
+    color: var(--o-text);
+}
+@media (max-width: 768px){
+	nav ul {
+		flex-direction: column;
+	}
+}
+
+nav ul li{
+	margin-left: 10px;
+	transition:var(--m-transition);
+}
+nav ul li a{color: var(--o-text);}
+nav ul li a:hover{
+	color: var(--c-text);
+}
+@media (max-width: 768px){
+	nav ul li {
+	margin-bottom: 12px;
+	margin-left:0;
+}}
+nav .right input,
+nav .right button{
+	border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 4px;
+    
+}
+
+nav .right button{
+	background-color: var(--btn1-color);
+    color: var(--c-text);
+    width: 35px;
+    position: relative;
+    cursor: pointer;
+}
+nav .right form{
+	display: flex;
+}
+nav .right button img{
+	width:22px;
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%,-50%);
+}
+nav .right input[type="search"]{
+	margin-right: 7px;
+    max-width: 200px;
+}
+nav .navbtn{
+	padding:7px;
+	display: none;
+}
+@media(max-width: 768px){
+	nav .navbtn{
+		display: block;
+	}
+}
+nav .navbtn div{
+	height: 2px ;
+	width:23px;
+	border-right: 2px;
+	background-color: white;
+	transition: var(--m-transition);
+	border-radius: 5px;	
+}
+nav .navbtn.active div{
+	background-color: var(--num-color);
+	
+}
+nav .navbtn.active div:hover{
+	background-color: var(--btn1-color);
+}
+nav .navbtn div:nth-child(2){
+transform: translateX(-10px);
+}
+nav .navbtn:hover div:nth-child(2){
+	transform: translateX(0);
+}
+nav .navbtn.active div:nth-child(2){
+	opacity: 0;
+
+}
+nav .navbtn.active div:first-child{
+	transform: rotate(45deg)translateY( 11px);
+}
+nav .navbtn.active div:last-child{
+	transform: rotate(-45deg) translateY(-11px);
+}
+nav .navbtn div:not(:last-child){
+	margin-bottom: 6px;
+}
+header{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: calc(100vh - 80px);
+}
+@media(max-width: 768px){
+	header{
+		flex-wrap: wrap;
+		height: auto;
+		padding:50px 0 0; 
+	}
+}
+header .left{
+	flex: 1;
+	padding-right: 15px
+}
+header .right{
+	flex: 1;
+}
+@media(max-width: 768px){
+	header .left ,
+	header .right{
+		flex-basis: 100%;
+		max-width: 500px;
+		margin-bottom: 25px
+	}
+}
+header .left h5{
+	color: var(--o-text);
+	font-size: 20px
+}
+header .left h2{
+	color: var(--c-text);
+    font-size: 28px;
+    margin: 15px 0;
+    font-weight: 500;
+}
+header .left p{
+	color: var(--o-text);
+    font-size: 17px;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+header .left a{
+	color: var(--num-color);
+    font-weight: 600;
+}
+header .left a span{
+	font-weight:bolder;
+}
+header .left button{
+	border: none;
+    outline: none;
+    padding: 9px;
+    border-radius: 4px;
+    background-color: var(--num-color);
+    color: var(--c-text);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+header .right img{
+	width:100%;
+}
+.landing .arrow{
+	width: fit-content;
+	margin:10px auto;
+	cursor: pointer;
+	border-radius: 6px;
+	animation: arrow 2s infinite;
+}
+.landing .arrow:hover{
+	background-color:var(--num-color);
+}
+
+@keyframes arrow{
+
+	0%,50%,100%{
+		transform:translateY(0);
+	}
+	25%,75%{
+		transform:translateY(-10px);
+	}
+}

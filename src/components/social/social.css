@@ -1,0 +1,39 @@
+.social{
+	padding: var(--m-n) 0;
+    background-color: var(--bg2);
+    border-bottom: 3px solid rgb(0 0 0 / 21%);
+}
+.social .content{
+	display: flex;
+	justify-content: space-between;
+
+}
+@media(max-width: 760px){
+.social .content{
+	flex-direction: column;
+	align-items: center;
+}
+}
+.social .content > div{
+	flex-basis: 48%;
+}
+.social .content .right{
+	display: grid;
+	grid-template-columns: repeat(5,1fr);
+	grid-gap: 10px;
+}
+@media(max-width: 760px){
+	.social .content .right{
+		margin-top: 20px;
+	}
+}
+.social .content .right .img{
+overflow: hidden;
+}
+.social .content .right img{
+	width: 100%;
+    max-width: 40px;
+    background-color: var(--c-text);
+    border-radius: 4px;
+    padding: 5px;
+}
